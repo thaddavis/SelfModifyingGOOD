@@ -274,19 +274,12 @@ for (var i = 1 ; i <= pArgs[pArgs.indexOf('maxNumberObjects')+1] ; i++) {
 	var xOffset = xCanvas/itemsPerRow[0];
 	var yOffset = yCanvas/itemsPerRow.length;
 
-	console.log('^^^');
-	console.log(xOffset);
-	console.log(yOffset);
-
 	// Place each model		
 	for (var j = 0 ; j < i ; j++) {
 		var nextTo = ``;
 		var nextState = ``;
-		// console.log('---');
-		// console.log('j',j);
+		
 		// Build each state for this amount of i
-
-		console.log('---');
 		for (var k = 0 ; k <= j ; k++) {			
 			var currentX, currentY, currentWidth, currentHeight;
 			chosenModels[k].body[0].expression.right.arguments[1].arguments.forEach(function(e, i) {
@@ -307,26 +300,19 @@ for (var i = 1 ; i <= pArgs[pArgs.indexOf('maxNumberObjects')+1] ; i++) {
 			var xX = 0;
 			var yY = 0;
 
-			//console.log();
-			for (var h = 0 ; h < itemsPerRow.length ; h++ ) {
+			var mostRowLength = itemsPerRow[0]; 
+			var lastRowLength = itemsPerRow[itemsPerRow.length-1];
+			var totalRows = itemsPerRow.length;
 
-				acc += itemsPerRow[h];
-				
-				if (k < acc) {
-					xX = k % itemsPerRow[h];
-					break;
-				}
-
-				xX = 0;
-				yY++;
-
+			if ( Math.floor( k / mostRowLength ) == totalRows - 1 ) {
+				xX = k - (mostRowLength * ( totalRows - 1 ) );
+				yY = totalRows - 1;				
+			} else {
+				xX = k % mostRowLength;
+				yY = Math.floor( k / mostRowLength );
 			}
 
-			console.log('---');
-			console.log('xX',xX);
-			console.log('yY',yY);
-
-			nextState = nextState + `{t:this.instance` + k + `,p:{x:` + xX*xOffset + `,y:` + yY*yOffset + `}},`;
+			nextState = nextState + `{t:this.instance` + k + `,p:{x:` + (xX*xOffset + (currentX > 0 ? currentX : currentX*-1) ) + `,y:` + (yY*yOffset + (currentY > 0 ? currentY : currentY*-1)) + `}},`;
 		}
 
 		nextTo = `.to({state:[` + nextState + `]},10)`;
