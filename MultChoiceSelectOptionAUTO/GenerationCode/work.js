@@ -281,7 +281,7 @@ for (var i = 1 ; i <= pArgs[pArgs.indexOf('maxNumberObjects')+1] ; i++) {
          
 	var answerOptionSpacingX = totalWidth - ( answerOptionBorderSpace * (itemsPerRow[0] - 1 + 2) );
     var answerOptionSpacingX = answerOptionSpacingX / (itemsPerRow[0]);
-    var answerOptionSpacingY = totalHeight - (answerOptionBorderSpace * (itemsPerRow.length - 1 + 2) ) - 100; // 100 is reserved area for multiple choice response
+    var answerOptionSpacingY = totalHeight - (answerOptionBorderSpace * (itemsPerRow.length - 1 + 2) ) - 180; // 100 is reserved area for multiple choice response
     var answerOptionSpacingY = answerOptionSpacingY / (itemsPerRow.length);
     
     console.log('--- i ---', i);
@@ -297,7 +297,6 @@ for (var i = 1 ; i <= pArgs[pArgs.indexOf('maxNumberObjects')+1] ; i++) {
 
 	// then scale the model so that it largest dimension is <= whichever of (remaining X | remaining Y) is smaller
 	// the largest side of the model must be <= the smaller side of remaining/allocated space --***
-
 
 
 	// Place each model		
@@ -330,6 +329,15 @@ for (var i = 1 ; i <= pArgs[pArgs.indexOf('maxNumberObjects')+1] ; i++) {
     		currentWidth *= scale;
     		currentHeight *= scale;
 
+
+    		console.log('^^^');
+
+    		var areaOffsetX = (answerOptionSpacingX - currentWidth) / 2;
+    		var areaOffsetY = (answerOptionSpacingY - currentHeight) / 2;
+    		console.log(areaOffsetX);
+    		console.log(areaOffsetY);
+		
+
 			var acc = 0;
 			var xX = 0;
 			var yY = 0;
@@ -345,14 +353,9 @@ for (var i = 1 ; i <= pArgs[pArgs.indexOf('maxNumberObjects')+1] ; i++) {
 			}
 
 			//Figure Out XandY of Model	
-			currentAnswerPositionX = (currentX > 0 ? currentX : currentX*-1) + answerOptionBorderSpace * (xX + 1) + answerOptionSpacingX*xX;  //xX*xOffset
-			currentAnswerPositionY = (currentY > 0 ? currentY : currentY*-1) + answerOptionBorderSpace * (yY + 1) + answerOptionSpacingY*yY; //yY*yOffset
+			currentAnswerPositionX = (currentX > 0 ? currentX : currentX*-1) + answerOptionBorderSpace * (xX + 1) + answerOptionSpacingX*xX + areaOffsetX;  //xX*xOffset
+			currentAnswerPositionY = (currentY > 0 ? currentY : currentY*-1) + answerOptionBorderSpace * (yY + 1) + answerOptionSpacingY*yY + areaOffsetY; //yY*yOffset
 
-
-			console.log('scale',scale);
-			console.log(answerOptionSpacingX);
-			console.log(answerOptionSpacingY);
-			//scale = 1;
 			nextState = nextState + `{t:this.instance` + k + 
 				`,p:{scaleX: ` + scale + `, scaleY: ` + scale + `, x:` + currentAnswerPositionX + `,y:` + currentAnswerPositionY + `}},`;
 		}
