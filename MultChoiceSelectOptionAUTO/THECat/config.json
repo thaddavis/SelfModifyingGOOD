@@ -1,0 +1,4 @@
+{
+	"models": ["cat.js"],
+	"outputFilenameTest" : "TEST.html"
+}

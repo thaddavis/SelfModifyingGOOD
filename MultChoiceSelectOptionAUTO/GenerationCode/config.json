@@ -1,0 +1,8 @@
+{
+	"outputDir": "../../FINALMultChoiceSelectOptionAUTO",
+	"animationCodeTemplate": "index.js",
+	"canvasX": 640,
+	"canvasY": 480,
+	"maxWidthOfObjectGrid": 6,
+	"maxNumberObjects": 9
+}

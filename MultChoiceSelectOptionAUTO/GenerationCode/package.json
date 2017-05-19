@@ -1,0 +1,15 @@
+{
+  "name": "multiple-choice-click-option-automated",
+  "version": "1.0.0",
+  "description": "",
+  "main": "MultipleChoiceClickOptionAUTOMATED.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "escodegen": "^1.8.1",
+    "esprima": "^3.1.3"
+  }
+}
