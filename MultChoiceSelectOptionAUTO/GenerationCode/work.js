@@ -274,12 +274,40 @@ for (var i = 1 ; i <= pArgs[pArgs.indexOf('maxNumberObjects')+1] ; i++) {
 	var xOffset = xCanvas/itemsPerRow[0];
 	var yOffset = yCanvas/itemsPerRow.length;
 
+	//***
+	var answerOptionBorderSpace = 10;
+    var totalWidth = xCanvas;
+    var totalHeight = yCanvas;
+         
+	var answerOptionSpacingX = totalWidth - ( answerOptionBorderSpace * (itemsPerRow[0] - 1 + 2) );
+    var answerOptionSpacingX = answerOptionSpacingX / (itemsPerRow[0]);
+    var answerOptionSpacingY = totalHeight - (answerOptionBorderSpace * (itemsPerRow.length - 1 + 2) ) - 100; // 100 is reserved area for multiple choice response
+    var answerOptionSpacingY = answerOptionSpacingY / (itemsPerRow.length);
+    
+    console.log('--- i ---', i);
+    console.log(answerOptionSpacingX);
+    console.log(answerOptionSpacingY);
+    // var requiredXSizeOfModel = answerOptionSpacingX / i
+    // var requiredXSizeOfModel = answerOptionSpacingX / i
+    //***
+
+    // have the remaining x & y spacing 
+	// so divide the remaining X space by how many per row
+	// so divide the remaining Y space by how many rows
+
+	// then scale the model so that it largest dimension is <= whichever of (remaining X | remaining Y) is smaller
+	// the largest side of the model must be <= the smaller side of remaining/allocated space --***
+
+
+
 	// Place each model		
 	for (var j = 0 ; j < i ; j++) {
 		var nextTo = ``;
 		var nextState = ``;
 		
 		// Build each state for this amount of i
+		var currentAnswerPositionX = 0;
+		var currentAnswerPositionY = 0;
 		for (var k = 0 ; k <= j ; k++) {			
 			var currentX, currentY, currentWidth, currentHeight;
 			chosenModels[k].body[0].expression.right.arguments[1].arguments.forEach(function(e, i) {
@@ -296,14 +324,18 @@ for (var i = 1 ; i <= pArgs[pArgs.indexOf('maxNumberObjects')+1] ; i++) {
     			}	
 			});
 
+			var scale = Math.min( Math.min(answerOptionSpacingX,answerOptionSpacingY) / Math.max(currentWidth,currentHeight), 1 ); // ----
+    		currentX *= scale;
+    		currentY *= scale;
+    		currentWidth *= scale;
+    		currentHeight *= scale;
+
 			var acc = 0;
 			var xX = 0;
 			var yY = 0;
-
 			var mostRowLength = itemsPerRow[0]; 
 			var lastRowLength = itemsPerRow[itemsPerRow.length-1];
 			var totalRows = itemsPerRow.length;
-
 			if ( Math.floor( k / mostRowLength ) == totalRows - 1 ) {
 				xX = k - (mostRowLength * ( totalRows - 1 ) );
 				yY = totalRows - 1;				
@@ -312,7 +344,17 @@ for (var i = 1 ; i <= pArgs[pArgs.indexOf('maxNumberObjects')+1] ; i++) {
 				yY = Math.floor( k / mostRowLength );
 			}
 
-			nextState = nextState + `{t:this.instance` + k + `,p:{x:` + (xX*xOffset + (currentX > 0 ? currentX : currentX*-1) ) + `,y:` + (yY*yOffset + (currentY > 0 ? currentY : currentY*-1)) + `}},`;
+			//Figure Out XandY of Model	
+			currentAnswerPositionX = (currentX > 0 ? currentX : currentX*-1) + answerOptionBorderSpace * (xX + 1) + answerOptionSpacingX*xX;  //xX*xOffset
+			currentAnswerPositionY = (currentY > 0 ? currentY : currentY*-1) + answerOptionBorderSpace * (yY + 1) + answerOptionSpacingY*yY; //yY*yOffset
+
+
+			console.log('scale',scale);
+			console.log(answerOptionSpacingX);
+			console.log(answerOptionSpacingY);
+			//scale = 1;
+			nextState = nextState + `{t:this.instance` + k + 
+				`,p:{scaleX: ` + scale + `, scaleY: ` + scale + `, x:` + currentAnswerPositionX + `,y:` + currentAnswerPositionY + `}},`;
 		}
 
 		nextTo = `.to({state:[` + nextState + `]},10)`;
