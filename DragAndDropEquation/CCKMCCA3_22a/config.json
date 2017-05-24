@@ -1,0 +1,18 @@
+{
+	"fileName" : "CC.K.M.CC.A.3_22a.js",
+	"outputFileName" : "dogOutput.html",
+	"outputFileNameTEST" : "dogOutputTEST.html",
+	"frameToAddFunctionalityOn" : "frame_49",
+	"answerOptions" : [ "14", "3", "6" ],
+	"answerOptionBorderSpace": 60,
+	"fontSizeOfAnswers" : 90,
+	"answer" : "2",
+	"font": "Sans-Serif",
+	"destBoxHeight": 100,
+	"destBoxWidth": 130,
+	"destBoxX": 440,
+	"destBoxY": 150,
+	"fullEquationString": "4 + x = 10",
+	"equationVerticalPlacement": 180,
+	"equationBorderSpace": 50
+}

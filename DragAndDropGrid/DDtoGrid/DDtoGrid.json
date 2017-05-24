@@ -1,0 +1,20 @@
+{
+	"fileName": "DDtoGrid.js",
+	"outputFileName": "gridOutput.html",
+	"outputFileNameTEST": "gridOutputTEST.html",
+	"projectName": "CCKCC4_4a_Canvas",
+	"frameToAddFunctionalityOn": "frame_0",
+	"answerOptions": [ "this.pencil01", "this.pencil02", "this.pencil03", "this.pencil04", "this.pencil05", "this.pencil06", "this.pencil07", "this.pencil08" ],
+	"cellsX": 5,
+	"cellsY": 2,
+	"offX": 60,
+	"offY": 80,
+	"answerGridX": 80,
+	"answerGridY": 40,
+	"answerLineWidth": 80,
+	"answerLineHeight": 80,
+	"answerLineX": 480,
+	"answerLineY": 80,
+	"answer": 3,
+	"fontSizeOfAnswer": 60
+}

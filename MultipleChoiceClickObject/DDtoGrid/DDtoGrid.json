@@ -1,0 +1,10 @@
+{
+	"fileName" : "DDtoGrid.js",
+	"outputFileName" : "gridOutput.html",
+	"outputFileNameTEST" : "gridOutputTEST.html",
+	"frameToAddFunctionalityOn" : "frame_0",
+	"answerOptions" : [ "this.pencil01", "this.pencil02", "this.pencil04" ],
+	"fontSizeOfAnswers" : 105,
+	"answer" : "2",
+	"font": "Serif"
+}

@@ -1,0 +1,246 @@
+<div><script>(function (lib, img, cjs, ss, an) {
+    var p;
+    lib.ssMetadata = [];
+    function mc_symbol_clone() {
+        var clone = this._cloneProps(new this.constructor(this.mode, this.startPosition, this.loop));
+        clone.gotoAndStop(this.currentFrame);
+        clone.paused = this.paused;
+        clone.framerate = this.framerate;
+        return clone;
+    }
+    function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
+        var prototype = cjs.extend(symbol, cjs.MovieClip);
+        prototype.clone = mc_symbol_clone;
+        prototype.nominalBounds = nominalBounds;
+        prototype.frameBounds = frameBounds;
+        return prototype;
+    }
+    (lib.pencilPurple1 = function (mode, startPosition, loop) {
+        this.initialize(mode, startPosition, loop, {});
+        this.shape = new cjs.Shape();
+        this.shape.graphics.f('#CC00CC').s().p('AisLVIAAt+IFZAAIAAN+gABHolIiPAAIBHivIBKCvg');
+        this.shape.setTransform(0, -9.5);
+        this.shape_1 = new cjs.Shape();
+        this.shape_1.graphics.f('#FF9900').s().p('AisJkIAAi9IFZAAIAAC9gAisnXIAAiHIADgGIFVAAIABAAIAACNg');
+        this.shape_1.setTransform(0, 20.8);
+        this.shape_2 = new cjs.Shape();
+        this.shape_2.graphics.lf([
+            '#A5755A',
+            '#D89D47'
+        ], [
+            0,
+            0.855
+        ], 0.2, 12.6, -0.1, -12.5).s().p('AipB4IgCAAIBijvIABAAICPAAIBlDqIAAAFg');
+        this.shape_2.setTransform(0, -52.5);
+        this.timeline.addTween(cjs.Tween.get({}).to({
+            state: [
+                { t: this.shape_2 },
+                { t: this.shape_1 },
+                { t: this.shape }
+            ]
+        }).wait(1));
+    }).prototype = getMCSymbolPrototype(lib.pencilPurple1, new cjs.Rectangle(-17.2, -82, 34.5, 164), null);
+    (lib.DDtoGrid = function (mode, startPosition, loop) {
+        this.initialize(mode, startPosition, loop, {});
+        this.frame_0 = function () {
+            var _self = this;
+            function setcolor(hex, mc) {
+                var result = /^#?([a-fd]{2})([a-fd]{2})([a-fd]{2})$/i.exec(hex);
+                var r = parseInt('31', 16);
+                var g = parseInt('31', 16);
+                var b = parseInt('31', 16);
+                var w = mc.nominalBounds.width;
+                var h = mc.nominalBounds.height;
+                var x = mc.nominalBounds.x;
+                var y = mc.nominalBounds.y;
+                mc.filters = [new createjs.ColorFilter(0, 0, 0, 0.4, r, g, b, 0.4)];
+                mc.cache(x, y, w, h);
+            }
+            _self._answerOptions = [
+                this.pencil01,
+                this.pencil02,
+                this.pencil04
+            ];
+            _self._answerOptionsToInstanceName = [
+                'this.pencil01',
+                'this.pencil02',
+                'this.pencil04'
+            ];
+            _self._answerOptions.forEach(function (value, i) {
+                value.originalName = _self._answerOptionsToInstanceName[i];
+                value.originalID = value.id;
+                _self._answerOptions[i].addEventListener('pressup', function (evt) {
+                    setcolor('#131313', evt.target.parent);
+                    _self._answerOptions.forEach(function (value, i) {
+                        _self._answerOptions[i].removeAllEventListeners();
+                    });
+                    $('#responseJSON').html('<div id=\'response\' data-response=\'' + evt.currentTarget.originalName + '\'></div><div id=\'genre\' data-genre=\'MultipleChoiceClickObject\'></div>');
+                });
+            });
+            this.stop();
+        };
+        this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(164));
+        var mask = new cjs.Shape();
+        mask._off = true;
+        mask.graphics.p('Egu3AhmMAAAhDLMBdvAAAMAAABDLg');
+        mask.setTransform(300, 215);
+        this.pencil07 = new lib.pencilPurple1();
+        this.pencil07.parent = this;
+        this.pencil07.setTransform(276.6, 342, 0.605, 0.605, -152.6);
+        this.pencil08 = new lib.pencilPurple1();
+        this.pencil08.parent = this;
+        this.pencil08.setTransform(315.4, 342, 0.605, 0.605, -152.6);
+        this.pencil06 = new lib.pencilPurple1();
+        this.pencil06.parent = this;
+        this.pencil06.setTransform(237.9, 342, 0.605, 0.605, -152.6);
+        this.pencil05 = new lib.pencilPurple1();
+        this.pencil05.parent = this;
+        this.pencil05.setTransform(199.1, 342, 0.605, 0.605, -152.6);
+        this.pencil03 = new lib.pencilPurple1();
+        this.pencil03.parent = this;
+        this.pencil03.setTransform(121.6, 342, 0.605, 0.605, -152.6);
+        this.pencil04 = new lib.pencilPurple1();
+        this.pencil04.parent = this;
+        this.pencil04.setTransform(160.4, 342, 0.605, 0.605, -152.6);
+        this.pencil02 = new lib.pencilPurple1();
+        this.pencil02.parent = this;
+        this.pencil02.setTransform(82.9, 342, 0.605, 0.605, -152.6);
+        this.pencil01 = new lib.pencilPurple1();
+        this.pencil01.parent = this;
+        this.pencil01.setTransform(44.1, 342, 0.605, 0.605, -152.6);
+        var maskedShapeInstanceList = [
+            this.pencil07,
+            this.pencil08,
+            this.pencil06,
+            this.pencil05,
+            this.pencil03,
+            this.pencil04,
+            this.pencil02,
+            this.pencil01
+        ];
+        for (var shapedInstanceItr = 0; shapedInstanceItr < maskedShapeInstanceList.length; shapedInstanceItr++) {
+            maskedShapeInstanceList[shapedInstanceItr].mask = mask;
+        }
+        this.timeline.addTween(cjs.Tween.get({}).to({
+            state: [
+                { t: this.pencil01 },
+                { t: this.pencil02 },
+                { t: this.pencil04 },
+                { t: this.pencil03 },
+                { t: this.pencil05 },
+                { t: this.pencil06 },
+                { t: this.pencil08 },
+                { t: this.pencil07 }
+            ]
+        }).wait(164));
+        this.shape = new cjs.Shape();
+        this.shape.graphics.f('#000000').s().p('AG4AUIgoAAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIAoAAQAIAAAGAGQAGAGAAAHQAAAIgGAGQgGAGgIAAIAAAAgAFUAUIg8AAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIA8AAQAIAAAGAGQAGAGAAAHQAAAIgGAGQgGAGgIAAIAAAAgADcAUIg8AAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIA8AAQAIAAAGAGQAGAGAAAHQAAAIgGAGQgGAGgIAAIAAAAgABkAUIg8AAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIA8AAQAIAAAGAGQAGAGAAAHQAAAIgGAGQgGAGgIAAIAAAAgAgTAUIg8AAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIA8AAQAIAAAGAGQAFAGAAAHQAAAIgFAGQgGAGgIAAIAAAAgAiLAUIg8AAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIA8AAQAIAAAGAGQAGAGAAAHQAAAIgGAGQgGAGgIAAIAAAAgAkDAUIg8AAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIA8AAQAIAAAGAGQAGAGAAAHQAAAIgGAGQgGAGgIAAIAAAAgAl7AUIg8AAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIA8AAQAIAAAGAGQAGAGAAAHQAAAIgGAGQgGAGgIAAIAAAAg');
+        this.shape.setTransform(525.3, 198.8);
+        this.timeline.addTween(cjs.Tween.get({}).to({ state: [] }).wait(164));
+        this.shape_1 = new cjs.Shape();
+        this.shape_1.graphics.f('#000000').s().p('EAwSAAUIgoAAIgUAAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIA8AAQAIAAAGAGQAGAGAAAHQAAAIgGAGQgGAGgIAAIAAAAgEAuaAAUIg8AAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIA8AAQAIAAAGAGQAGAGAAAHQAAAIgGAGQgGAGgIAAIAAAAgEAsiAAUIg8AAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIA8AAQAIAAAGAGQAGAGAAAHQAAAIgGAGQgGAGgIAAIAAAAgEAqqAAUIg8AAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIA8AAQAIAAAGAGQAGAGAAAHQAAAIgGAGQgGAGgIAAIAAAAgEAoyAAUIg8AAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIA8AAQAIAAAGAGQAGAGAAAHQAAAIgGAGQgGAGgIAAIAAAAgEAm6AAUIg8AAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIA8AAQAIAAAGAGQAGAGAAAHQAAAIgGAGQgGAGgIAAIAAAAgEAlCAAUIg8AAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIA8AAQAIAAAGAGQAGAGAAAHQAAAIgGAGQgGAGgIAAIAAAAgEAjKAAUIg8AAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIA8AAQAIAAAGAGQAGAGAAAHQAAAIgGAGQgGAGgIAAIAAAAgEAhSAAUIg8AAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIA8AAQAIAAAGAGQAGAGAAAHQAAAIgGAGQgGAGgIAAIAAAAgAfaAUIg8AAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIA8AAQAIAAAGAGQAGAGAAAHQAAAIgGAGQgGAGgIAAIAAAAgAdiAUIg8AAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIA8AAQAIAAAGAGQAGAGAAAHQAAAIgGAGQgGAGgIAAIAAAAgAbqAUIg8AAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIA8AAQAIAAAGAGQAGAGAAAHQAAAIgGAGQgGAGgIAAIAAAAgAZyAUIg8AAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIA8AAQAIAAAGAGQAGAGAAAHQAAAIgGAGQgGAGgIAAIAAAAgAX6AUIg8AAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIA8AAQAIAAAGAGQAGAGAAAHQAAAIgGAGQgGAGgIAAIAAAAgAWCAUIg8AAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIA8AAQAIAAAGAGQAGAGAAAHQAAAIgGAGQgGAGgIAAIAAAAgAUKAUIg8AAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIA8AAQAIAAAGAGQAGAGAAAHQAAAIgGAGQgGAGgIAAIAAAAgASSAUIg8AAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIA8AAQAIAAAGAGQAGAGAAAHQAAAIgGAGQgGAGgIAAIAAAAgAQaAUIg8AAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIA8AAQAIAAAGAGQAGAGAAAHQAAAIgGAGQgGAGgIAAIAAAAgAOiAUIg8AAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIA8AAQAIAAAGAGQAGAGAAAHQAAAIgGAGQgGAGgIAAIAAAAgAMqAUIg8AAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIA8AAQAIAAAGAGQAGAGAAAHQAAAIgGAGQgGAGgIAAIAAAAgAKyAUIg8AAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIA8AAQAIAAAGAGQAGAGAAAHQAAAIgGAGQgGAGgIAAIAAAAgAI6AUIg8AAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIA8AAQAIAAAGAGQAGAGAAAHQAAAIgGAGQgGAGgIAAIAAAAgAHCAUIg8AAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIA8AAQAIAAAGAGQAGAGAAAHQAAAIgGAGQgGAGgIAAIAAAAgAFKAUIg8AAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIA8AAQAIAAAGAGQAGAGAAAHQAAAIgGAGQgGAGgIAAIAAAAgADSAUIg8AAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIA8AAQAIAAAGAGQAGAGAAAHQAAAIgGAGQgGAGgIAAIAAAAgABaAUIg8AAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIA8AAQAIAAAGAGQAGAGAAAHQAAAIgGAGQgGAGgIAAIAAAAgAgdAUIg8AAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIA8AAQAIAAAGAGQAGAGAAAHQAAAIgGAGQgGAGgIAAIAAAAgAiVAUIg8AAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIA8AAQAIAAAGAGQAGAGAAAHQAAAIgGAGQgGAGgIAAIAAAAgAkNAUIg8AAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIA8AAQAIAAAGAGQAGAGAAAHQAAAIgGAGQgGAGgIAAIAAAAgAmFAUIg8AAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIA8AAQAIAAAGAGQAGAGAAAHQAAAIgGAGQgGAGgIAAIAAAAgAn9AUIg8AAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIA8AAQAIAAAGAGQAGAGAAAHQAAAIgGAGQgGAGgIAAIAAAAgAp1AUIg8AAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIA8AAQAIAAAGAGQAGAGAAAHQAAAIgGAGQgGAGgIAAIAAAAgArtAUIg8AAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIA8AAQAIAAAGAGQAGAGAAAHQAAAIgGAGQgGAGgIAAIAAAAgAtlAUIg8AAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIA8AAQAIAAAGAGQAGAGAAAHQAAAIgGAGQgGAGgIAAIAAAAgAvdAUIg8AAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIA8AAQAIAAAGAGQAGAGAAAHQAAAIgGAGQgGAGgIAAIAAAAgAxVAUIg8AAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIA8AAQAIAAAGAGQAGAGAAAHQAAAIgGAGQgGAGgIAAIAAAAgAzNAUIg8AAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIA8AAQAIAAAGAGQAGAGAAAHQAAAIgGAGQgGAGgIAAIAAAAgA1FAUIg8AAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIA8AAQAIAAAGAGQAGAGAAAHQAAAIgGAGQgGAGgIAAIAAAAgA29AUIg8AAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIA8AAQAIAAAGAGQAGAGAAAHQAAAIgGAGQgGAGgIAAIAAAAgA41AUIg8AAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIA8AAQAIAAAGAGQAGAGAAAHQAAAIgGAGQgGAGgIAAIAAAAgA6tAUIg8AAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIA8AAQAIAAAGAGQAGAGAAAHQAAAIgGAGQgGAGgIAAIAAAAgA8lAUIg8AAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIA8AAQAIAAAGAGQAGAGAAAHQAAAIgGAGQgGAGgIAAIAAAAgA+dAUIg8AAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIA8AAQAIAAAGAGQAGAGAAAHQAAAIgGAGQgGAGgIAAIAAAAgEggVAAUIg8AAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIA8AAQAIAAAGAGQAGAGAAAHQAAAIgGAGQgGAGgIAAIAAAAgEgiNAAUIg8AAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIA8AAQAIAAAGAGQAGAGAAAHQAAAIgGAGQgGAGgIAAIAAAAgEgkFAAUIg8AAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIA8AAQAIAAAGAGQAGAGAAAHQAAAIgGAGQgGAGgIAAIAAAAgEgl9AAUIg8AAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIA8AAQAIAAAGAGQAGAGAAAHQAAAIgGAGQgGAGgIAAIAAAAgEgn1AAUIg8AAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIA8AAQAIAAAGAGQAGAGAAAHQAAAIgGAGQgGAGgIAAIAAAAgEgptAAUIg8AAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIA8AAQAIAAAGAGQAGAGAAAHQAAAIgGAGQgGAGgIAAIAAAAgEgrlAAUIg8AAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIA8AAQAIAAAGAGQAGAGAAAHQAAAIgGAGQgGAGgIAAIAAAAgEgtdAAUIg8AAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIA8AAQAIAAAGAGQAGAGAAAHQAAAIgGAGQgGAGgIAAIAAAAgEgvVAAUIg8AAQgIAAgGgGQgGgGAAgIQAAgHAGgGQAGgGAIAAIA8AAQAIAAAGAGQAGAGAAAHQAAAIgGAGQgGAGgIAAIAAAAg');
+        this.shape_1.setTransform(300, 279.9);
+        this.shape_2 = new cjs.Shape();
+        this.shape_2.graphics.f('#F6FDFF').s().p('EgvQALuIAA3bIAKAAQAAAIAGAGQAGAGAIAAIA8AAQAIAAAGgGQAGgGAAgIIAUAAQAAAIAGAGQAGAGAIAAIA8AAQAIAAAGgGQAGgGAAgIIAUAAQAAAIAGAGQAGAGAIAAIA8AAQAIAAAGgGQAGgGAAgIIAUAAQAAAIAGAGQAGAGAIAAIA8AAQAIAAAGgGQAGgGAAgIIAUAAQAAAIAGAGQAGAGAIAAIA8AAQAIAAAGgGQAGgGAAgIIAUAAQAAAIAGAGQAGAGAIAAIA8AAQAIAAAGgGQAGgGAAgIIAUAAQAAAIAGAGQAGAGAIAAIA8AAQAIAAAGgGQAGgGAAgIIAUAAQAAAIAGAGQAGAGAIAAIA8AAQAIAAAGgGQAGgGAAgIIAUAAQAAAIAGAGQAGAGAIAAIA8AAQAIAAAGgGQAGgGAAgIIAUAAQAAAIAGAGQAGAGAIAAIA8AAQAIAAAGgGQAGgGAAgIIAUAAQAAAIAGAGQAGAGAIAAIA8AAQAIAAAGgGQAGgGAAgIIAUAAQAAAIAGAGQAGAGAIAAIA8AAQAIAAAGgGQAGgGAAgIIAUAAQAAAIAGAGQAGAGAIAAIA8AAQAIAAAGgGQAGgGAAgIIAUAAQAAAIAGAGQAGAGAIAAIA8AAQAIAAAGgGQAGgGAAgIIAUAAQAAAIAGAGQAGAGAIAAIA8AAQAIAAAGgGQAGgGAAgIIAUAAQAAAIAGAGQAGAGAIAAIA8AAQAIAAAGgGQAGgGAAgIIAUAAQAAAIAGAGQAGAGAIAAIA8AAQAIAAAGgGQAGgGAAgIIAUAAQAAAIAGAGQAGAGAIAAIA8AAQAIAAAGgGQAGgGAAgIIAUAAQAAAIAGAGQAGAGAIAAIA8AAQAIAAAGgGQAGgGAAgIIAUAAQAAAIAGAGQAGAGAIAAIA8AAQAIAAAGgGQAGgGAAgIIAUAAQAAAIAGAGQAGAGAIAAIA8AAQAIAAAGgGQAGgGAAgIIAUAAQAAAIAGAGQAGAGAIAAIA8AAQAIAAAGgGQAGgGAAgIIAUAAQAAAIAGAGQAGAGAIAAIA8AAQAIAAAGgGQAGgGAAgIIAUAAQAAAIAGAGQAGAGAIAAIA8AAQAIAAAGgGQAGgGAAgIIAUAAQAAAIAGAGQAGAGAIAAIA8AAQAIAAAGgGQAGgGAAgIIAUAAQAAAIAGAGQAGAGAHAAIA8AAQAIAAAGgGQAGgGAAgIIAUAAQAAAIAGAGQAGAGAIAAIA8AAQAIAAAGgGQAGgGAAgIIAUAAQAAAIAGAGQAGAGAIAAIA8AAQAIAAAGgGQAGgGAAgIIAUAAQAAAIAGAGQAGAGAIAAIA8AAQAIAAAGgGQAGgGAAgIIAUAAQAAAIAGAGQAGAGAIAAIA8AAQAIAAAGgGQAGgGAAgIIAUAAQAAAIAGAGQAGAGAIAAIA8AAQAIAAAGgGQAGgGAAgIIAUAAQAAAIAGAGQAGAGAIAAIA8AAQAIAAAGgGQAGgGAAgIIAUAAQAAAIAGAGQAGAGAIAAIA8AAQAIAAAGgGQAGgGAAgIIAUAAQAAAIAGAGQAGAGAIAAIA8AAQAIAAAGgGQAGgGAAgIIAUAAQAAAIAGAGQAGAGAIAAIA8AAQAIAAAGgGQAGgGAAgIIAUAAQAAAIAGAGQAGAGAIAAIA8AAQAIAAAGgGQAGgGAAgIIAUAAQAAAIAGAGQAGAGAIAAIA8AAQAIAAAGgGQAGgGAAgIIAUAAQAAAIAGAGQAGAGAIAAIA8AAQAIAAAGgGQAGgGAAgIIAUAAQAAAIAGAGQAGAGAIAAIA8AAQAIAAAGgGQAGgGAAgIIAUAAQAAAIAGAGQAGAGAIAAIA8AAQAIAAAGgGQAGgGAAgIIAUAAQAAAIAGAGQAGAGAIAAIA8AAQAIAAAGgGQAGgGAAgIIAUAAQAAAIAGAGQAGAGAIAAIA8AAQAIAAAGgGQAGgGAAgIIAUAAQAAAIAGAGQAGAGAIAAIA8AAQAIAAAGgGQAGgGAAgIIAUAAQAAAIAGAGQAGAGAIAAIA8AAQAIAAAGgGQAGgGAAgIIAUAAQAAAIAGAGQAGAGAIAAIA8AAQAIAAAGgGQAGgGAAgIIAUAAQAAAIAGAGQAGAGAIAAIA8AAQAIAAAGgGQAGgGAAgIIAUAAQAAAIAGAGQAGAGAIAAIA8AAQAIAAAGgGQAGgGAAgIIAUAAQAAAIAGAGQAGAGAIAAIA8AAQAIAAAGgGQAGgGAAgIIAUAAQAAAIAGAGQAGAGAIAAIA8AAQAIAAAGgGQAGgGAAgIIAUAAQAAAIAGAGQAGAGAIAAIA8AAQAIAAAGgGQAGgGAAgIIAUAAQAAAIAGAGQAGAGAIAAIAUAAIAAXHg');
+        this.shape_2.setTransform(302.5, 355);
+        var maskedShapeInstanceList = [
+            this.shape_1,
+            this.shape_2
+        ];
+        for (var shapedInstanceItr = 0; shapedInstanceItr < maskedShapeInstanceList.length; shapedInstanceItr++) {
+            maskedShapeInstanceList[shapedInstanceItr].mask = mask;
+        }
+        this.timeline.addTween(cjs.Tween.get({}).to({
+            state: [
+                { t: this.shape_2 },
+                { t: this.shape_1 }
+            ]
+        }).wait(164));
+        this.shape_3 = new cjs.Shape();
+        this.shape_3.graphics.f('#FFF8F3').s().p('Egu3AhmMAAAhDLMBdvAAAMAAABDLg');
+        this.shape_3.setTransform(300, 215);
+        var maskedShapeInstanceList = [this.shape_3];
+        for (var shapedInstanceItr = 0; shapedInstanceItr < maskedShapeInstanceList.length; shapedInstanceItr++) {
+            maskedShapeInstanceList[shapedInstanceItr].mask = mask;
+        }
+        this.timeline.addTween(cjs.Tween.get(this.shape_3).wait(164));
+    }).prototype = p = new cjs.MovieClip();
+    p.nominalBounds = new cjs.Rectangle(300, 215, 600, 430);
+    lib.properties = {
+        width: 600,
+        height: 430,
+        fps: 24,
+        color: '#FFFFFF',
+        opacity: 1,
+        manifest: [],
+        preloads: []
+    };
+}(lib = lib || {}, images = images || {}, createjs = createjs || {}, ss = ss || {}, AdobeAn = AdobeAn || {}));
+var lib, images, createjs, ss, AdobeAn;</script>
+	<script>
+		var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+		function init() {
+			canvas = document.getElementById("canvas");
+			anim_container = document.getElementById("animation_container");
+			dom_overlay_container = document.getElementById("dom_overlay_container");
+			handleComplete();
+		}
+		function handleComplete() {
+			//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+			exportRoot = new lib.DDtoGrid();
+			stage = new createjs.Stage(canvas);
+			stage.addChild(exportRoot);
+			stage.enableMouseOver();	
+			//Registers the "tick" event listener.
+			fnStartAnimation = function() {
+				createjs.Ticker.setFPS(lib.properties.fps);
+				createjs.Ticker.addEventListener("tick", stage);
+			}	    
+			//Code to support hidpi screens and responsive scaling.
+			function makeResponsive(isResp, respDim, isScale, scaleType) {		
+				var lastW, lastH, lastS=1;		
+				window.addEventListener('resize', resizeCanvas);		
+				resizeCanvas();		
+				function resizeCanvas() {			
+					var w = lib.properties.width, h = lib.properties.height;			
+					var iw = window.innerWidth, ih=window.innerHeight;			
+					var pRatio = window.devicePixelRatio || 1, xRatio=iw/w, yRatio=ih/h, sRatio=1;			
+					if(isResp) {                
+						if((respDim=='width'&&lastW==iw) || (respDim=='height'&&lastH==ih)) {                    
+							sRatio = lastS;                
+						}				
+						else if(!isScale) {					
+							if(iw<w || ih<h)						
+								sRatio = Math.min(xRatio, yRatio);				
+						}				
+						else if(scaleType==1) {					
+							sRatio = Math.min(xRatio, yRatio);				
+						}				
+						else if(scaleType==2) {					
+							sRatio = Math.max(xRatio, yRatio);				
+						}
+					}		
+					canvas.width = w*pRatio*sRatio;			
+					canvas.height = h*pRatio*sRatio;
+					canvas.style.width = dom_overlay_container.style.width = anim_container.style.width =  w*sRatio+'px';				
+					canvas.style.height = anim_container.style.height = dom_overlay_container.style.height = h*sRatio+'px';
+					stage.scaleX = pRatio*sRatio;			
+					stage.scaleY = pRatio*sRatio;			
+					lastW = iw; lastH = ih; lastS = sRatio;		
+				}
+			}
+			makeResponsive(true,'both',false,2);	
+			fnStartAnimation();
+		}
+	</script>
+
+	<div>
+		<div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00);">
+			<canvas id="canvas" style="position: absolute; display: block; background-color:rgba(255, 255, 255, 1.00);"></canvas>
+			<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; position: absolute; left: 0px; top: 0px; display: block;">
+			</div>
+		</div>
+		<script>init();</script>
+		<div style="display:none;" id="responseJSON"></div>
+	</div>
+</div>

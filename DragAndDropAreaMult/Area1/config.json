@@ -1,0 +1,19 @@
+{
+    "fileName": "CCSS.MATH.K.CC.B.5_1a_Canvas.js",
+    "outputFileName": "CCSS.MATH.K.CC.B.5_1a_CanvasOUTPUT.html",
+    "outputFileNameTEST": "areaTEST.html",
+    "projectName": "CCSSMATHKCCB5_1a_Canvas",
+    "frameToAddFunctionalityOn": "frame_0",
+    "answerOptions": "this.apple01,this.apple02",
+    "answerAreaWidth": "155",
+    "answerAreaHeight": "300",
+    "answerAreaX": "450",
+    "answerAreaY": "140",
+    "answerLineWidth": "155",
+    "answerLineHeight": "80",
+    "answerLineX": "450",
+    "answerLineY": "40",
+    "fontSizeOfAnswer": "55",
+    "answer": 1,
+    "folder": "Area"
+}

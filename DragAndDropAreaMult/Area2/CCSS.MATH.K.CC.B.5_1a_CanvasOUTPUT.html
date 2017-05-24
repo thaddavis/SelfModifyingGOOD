@@ -1,0 +1,339 @@
+<div><script>(function (lib, img, cjs, ss, an) {
+    var p;
+    lib.ssMetadata = [];
+    function mc_symbol_clone() {
+        var clone = this._cloneProps(new this.constructor(this.mode, this.startPosition, this.loop));
+        clone.gotoAndStop(this.currentFrame);
+        clone.paused = this.paused;
+        clone.framerate = this.framerate;
+        return clone;
+    }
+    function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
+        var prototype = cjs.extend(symbol, cjs.MovieClip);
+        prototype.clone = mc_symbol_clone;
+        prototype.nominalBounds = nominalBounds;
+        prototype.frameBounds = frameBounds;
+        return prototype;
+    }
+    (lib.answerArea = function (mode, startPosition, loop) {
+        this.initialize(mode, startPosition, loop, {});
+        this.horizontalLines = [];
+        this.verticalLines = [];
+        this.horizontalLines[0] = new cjs.Shape();
+        this.horizontalLines[0].graphics.setStrokeStyle(2).beginStroke('#000000').mt(0, 0).lt(155, 0);
+        this.horizontalLines[0].setTransform(0, 0);
+        this.horizontalLines[1] = new cjs.Shape();
+        this.horizontalLines[1].graphics.setStrokeStyle(2).beginStroke('#000000').mt(0, 300).lt(155, 300);
+        this.horizontalLines[1].setTransform(0, 0);
+        this.verticalLines[0] = new cjs.Shape();
+        this.verticalLines[0].graphics.setStrokeStyle(2).beginStroke('#000000').mt(0, 0).lt(0, 300);
+        this.verticalLines[0].setTransform(0, 0);
+        this.verticalLines[1] = new cjs.Shape();
+        this.verticalLines[1].graphics.setStrokeStyle(2).beginStroke('#000000').mt(155, 0).lt(155, 300);
+        this.verticalLines[1].setTransform(0, 0);
+        for (var i = 0; i < this.horizontalLines.length; i++) {
+            this.timeline.addTween(cjs.Tween.get(this.horizontalLines[i]).wait(1));
+        }
+        for (var i = 0; i < this.verticalLines.length; i++) {
+            this.timeline.addTween(cjs.Tween.get(this.verticalLines[i]).wait(1));
+        }
+    }).prototype = getMCSymbolPrototype(lib.answerArea, new cjs.Rectangle(0, 0, 155, 300), null);
+    (lib.tree01 = function (mode, startPosition, loop) {
+        this.initialize(mode, startPosition, loop, {});
+        this.shape = new cjs.Shape();
+        this.shape.graphics.f('#239647').s().p('ACwBVIhUgHIhngIQgsgDgdABQgVABgpgJQgogIgiACIhCADQgeABgbACQgmADgOgLQgOgLATgRQAPgNASgeIAOgdQASArgLAfQBAgrAkgwQgCAkgQAkQBZguApguQgBA5gYA4QAkg0A2grQgdA8AQApIB/h3IgzBtQAwgjBMgpQgzA1AHAbQA2ggBFgUIgiA4QA7gHAsgfQgHAcghAaIBrgYQgNAigJAAQgJAAAkACQAkADASADQgLAEgYAFQgvAKg6ABIgjAAQggAAgTgBg');
+        this.shape.setTransform(7.3, 65);
+        this.shape_1 = new cjs.Shape();
+        this.shape_1.graphics.lf([
+            '#DBE074',
+            '#128F43'
+        ], [
+            0.086,
+            0.765
+        ], 132.2, 17.1, 82.4, 104.7).s().p('AAMFxIgIgGQgmARg0AAQg/AAgsgYQgOgIgKgJQgaAIggAAQhAAAgugiQgughAAgvQAAgKACgJIgWgWQghgNgZgdQgvg0ABhJQgBhHAug0QAHgRAKgRQABgiAXgYQAVgWAcgEIAGgFQAGg+A/guQBHgxBjAAQA7AAAxASQAUgOAXAAQAfAAAZAaIADAAQAbgfAjAAQAiAAAbAcQAogkA3AAQA4AAAoAlQAmAkADAwQA4AJAsAcQBCApAAA7QAAA2g4AnQAoAoAAA2QAABBg6AtQgjAdgtALIgDADIAAADQAAA+hAAsQg/AshZAAQgWAAgTgDIgJAIQgZATgjAAQgkAAgZgTg');
+        this.shape_1.setTransform(0, -34.8);
+        this.shape_2 = new cjs.Shape();
+        this.shape_2.graphics.lf([
+            '#A8542A',
+            '#D4A01E'
+        ], [
+            0,
+            1
+        ], -9.3, -2.2, 12.9, 1.9).s().p('AioFqQBZkfgRkNQhBgzgXhWIAWgFQARA9AuAiQgHg9gLg7IBtAAQAUBUAPBaQB1hCAGhoIAigEQgZCMh9BOQAjDrgHEOg');
+        this.shape_2.setTransform(4.7, 32.4);
+        this.shape_3 = new cjs.Shape();
+        this.shape_3.graphics.f('#8AAD23').s().p('ADCA6IgDgBIgBgBIhdABIgBAAIgCABIhhAAIgCgBIgBgBIgSAAIgCgBIgIAAIgCgBIgLgBIgCAAIgUgBIgCAAIgBgBIgGAAIgDgBIgCAAIgOgBIgDAAIgUgBIgDgBIhqAAIgCgBIgTgBIgCAAIAAAAIg7gBIgCAAIgBgBIgDAAIgDgBIgFAAIgDgBIgDAAIAAABIgBABIgBABIgCABIgDAAIgCAAIgCgBIAAgBIAAgBIACgBIAAgBIAAgBIAAgBIAAgBIAAgBIAAgBIAAgBIAAgBIAAgBIAAgBIAAgCIAAgBIgBgBIgBgBIAAgBIAAgBIABgBIABgBIAAgBIAAgBIAAgBIABgBIABgBIAAgCIAAgBIAAgBIAAgBIAAgBIABgBIABgBIAAgBIAAgBIAAgDIAAgBIABgBIABgBIAAgBIABAAIABgBIABgBIABgBIAAgBIAAgBIABgBIABgBIABgBIABgBIACgBIADgBIABgBIABgBIACgBIACgBIADgBIABgBIAEgBIACgBIABgBIABgBIAAAAIADAAIADgBIABgBIACgCIABgBIADgBIACAAIABAAIACgBIADAAIADgBIAEgBIACAAIAGgBIADgBIASAAIADABIACABIABABIAAAAIACAAIABgBIABgBIABgBIAAgBIACgBIADgBIABAAIADgBIACgBIACAAIABgBIADgBIAEAAIADgBIABgBIACAAIAIgBIADAAIAFgBIAEgBIANAAIADABIAGABIACAAIAFABIACABIABABIABAAIACAAIACABIABABIABABIABABIACABIABABIACABIABABIABABIACABIABABIABABIAAABIACAAIACgBIABgBIABgBIACgBIACgBIACgBIABgBIACAAIACgBIADgBIACgBIADAAIABgBIABgBIADgBIAEAAIACgBIACgBIACAAIAEgBIADAAIAFgBIACgBIABgBIACAAIAGAAIAAAAIADgBIAOAAIACABIABAAIADAAIADABIABABIACABIACABIABABIACABIABAAIACACIACABIABABIAAABIABABIABAAIABABIABgBIAAgBIABgBIACgBIACgBIABgBIACgBIABgBIACgBIADgBIACgBIADgBIACgBIACgBIABgBIACgBIABAAIABgBIACAAIADgBIADgBIACAAIACgBIACAAIABAAIAEgBIACgBIABAAIACAAIADgBIADgBIAFAAIAEgBIAdAAIACABIAGAAIADABIADABIADABIADABIACABIABABIABABIAAAEIAAABIAAACIAAACIAAADIAAADIAAABIABgBIADAAIACgBIAEgBIABAAIADAAIADgBIADgBIACgBIAEgBIADgBIABAAIAEgBIAEAAIAWAAIADAAIABABIACABIABABIACABIACABIACABIABABIABABIACABIABABIAAABIACABIABABIABABIAAABIAAABIAAABIAAABIAAABIAAABIAAABIAAABIgBABIgBABIgCABIgBABIgBABIgBABIgCABIgBABIAAABIAGAAIADgBIALAAIABgBIACAAIAeAAIACAAIABABIACAAIACABIACABIACAAIABABIABABIACAAIADABIABABIACABIABABIAAABIABABIABABIABABIAAAAIADABIABABIABABIABABIAAABIABABIAAABIAAAAIAAACIAAABIABABIAAABIAAABIAAAAIAAACIAAABIAAABIAAABIAAABIAAAAIAAADIAAABIgBACIAAAAIAAABIAEAAIABgBIABAAIACgBIAHAAIACgBIAgAAIACABIABABIABAAIABABIAAABIAAACIAAACIAAAAIADAAIADgBIACgBIAAAAIACgBIAFgBIACAAIAJAAIACAAIABACIACABIACABIACAAIABABIABABIADACIAAABIABABIAAAAIABACIAAABIAAACIAAABIAAABIAAABIAAABIAAABIAAACIAAABIAAACIgBABIAAABIgCABIgCABIAAABIgBAAIgBABIiOAAg');
+        this.shape_3.setTransform(7.4, 65.3);
+        this.timeline.addTween(cjs.Tween.get({}).to({
+            state: [
+                { t: this.shape_3 },
+                { t: this.shape_2 },
+                { t: this.shape_1 },
+                { t: this.shape }
+            ]
+        }).wait(1));
+    }).prototype = getMCSymbolPrototype(lib.tree01, new cjs.Rectangle(-55.6, -73.6, 111.3, 147.3), null);
+    (lib.apple = function (mode, startPosition, loop) {
+        this.initialize(mode, startPosition, loop, {});
+        this.shape = new cjs.Shape();
+        this.shape.graphics.f().s('#339900').ss(1.5, 1, 1).p('AhsgzQAmgTAnALQAPAEAQAJIgJgiAA6gkIgBAiAgfg7IgsAUAgfgCIA/gSQgRgQgPgKAAggUQAnAjAmBCAAsA2IApgG');
+        this.shape.setTransform(14.2, 10.7);
+        this.shape_1 = new cjs.Shape();
+        this.shape_1.graphics.f().s('#333333').ss(1.5, 1, 1).p('AgRhwIgCgBQACgCgBgBQgUgQgUgJQgVgJgPABQiBAHgqBqQgbBDANBWQAJA5AqBAQAvBJBDApQAKAGARALQANAIAIABQAVAAAZgCQAXgDAlACQB1hSA9hTQBFhggDhoQgOhrhCgcQhAgbh7AoQgDABgEABQgDACgEABQgCAAgBABIAAAAQAAAAgBAAQgCABgCABQgBABAAACQAAABAAAAIgGgCIgGgCQAAgCAAgCQAAgCABgCQALhzBZhOIAeAeQg0ATgXAdQggAngLBQQACABACABQAAAAAAAAAgFhoQgEABgDABQg9AVg9AoAgFhsQAAACAAACAkMlGQBPCdCwgKQhBkri+CYg');
+        this.shape_1.setTransform(28.4, 37.8);
+        this.shape_2 = new cjs.Shape();
+        this.shape_2.graphics.f('#60D824').s().p('Ah+gwQC9iXBAEqIgTAAQigABhKiUgABsBYQgmhCgngjQAnAjAmBCgAArA9IApgGgAA4AEIABghgAggAEIA/gRQgRgQgPgKQAPAKARAQgAhMggIAsgUgAgBgnIgJgiIAJAiQgQgJgPgEIgEgBQgMgDgMAAIAAAAIAAAAQgZAAgYAMQAYgMAZAAIAAAAIAAAAQAMAAAMADIAEABQAPAEAQAJgAgBgnIAAAAg');
+        this.shape_2.setTransform(14.3, 10);
+        this.shape_3 = new cjs.Shape();
+        this.shape_3.graphics.f('#BD7D56').s().p('Ag7BkIAHgCIgBADIAAABgAhBBiIAAgEIABgEQALhyBZhNIAeAeQg0ASgWAdQggAmgMBQIAAAEIgHACg');
+        this.shape_3.setTransform(33.1, 17.5);
+        this.shape_4 = new cjs.Shape();
+        this.shape_4.graphics.lf([
+            '#FFA466',
+            '#FF3300'
+        ], [
+            0,
+            0.671
+        ], -28.4, 0, 28.4, 0).s().p('AhCEIQgIAAgNgIIgbgSQhDgpgvhIQgqhAgJg5QgNhVAbhEQAqhqCBgIQAPgBAVAJQAUAJAUAQQAAAAAAABQABAAgBABQAAAAAAABQAAAAgBABIACAAIgBAFIAAADIAGADQg9AUg9ApQA9gpA9gUIAGACIAAgBIABgEIAEgBIABgBIAAAAIADgBIAHgCIAHgCQB7gpBAAcQBCAcAOBsQADBmhFBgQg9BUh1BSQglgDgXADQgVACgSAAIgHAAgAgFjeIAEACIAAABIgEABIAAgEgAgBjbIAAAAg');
+        this.shape_4.setTransform(28.4, 49.2);
+        this.timeline.addTween(cjs.Tween.get({}).to({
+            state: [
+                { t: this.shape_4 },
+                { t: this.shape_3 },
+                { t: this.shape_2 },
+                { t: this.shape_1 },
+                { t: this.shape }
+            ]
+        }).wait(1));
+    }).prototype = getMCSymbolPrototype(lib.apple, new cjs.Rectangle(-1, -1, 58.8, 77.6), null);
+    (lib.tree = function (mode, startPosition, loop) {
+        this.initialize(mode, startPosition, loop, {});
+        this.instance = new lib.tree01();
+        this.instance.parent = this;
+        this.instance.setTransform(0, 0, 2.52, 2.52);
+        this.instance.shadow = new cjs.Shadow('#000000', 4, 4, 12);
+        this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
+    }).prototype = getMCSymbolPrototype(lib.tree, new cjs.Rectangle(-150.2, -195.6, 310, 400), null);
+    (lib.apple2 = function (mode, startPosition, loop) {
+        this.initialize(mode, startPosition, loop, {});
+        this.apple14 = new lib.apple();
+        this.apple14.parent = this;
+        this.apple14.setTransform(0.1, 0.2, 0.634, 0.634, 0, 0, 180, 28.4, 38);
+        this.timeline.addTween(cjs.Tween.get(this.apple14).wait(1));
+    }).prototype = getMCSymbolPrototype(lib.apple2, new cjs.Rectangle(-18.4, -24.4, 37, 49), null);
+    (lib.apple1 = function (mode, startPosition, loop) {
+        this.initialize(mode, startPosition, loop, {});
+        this.apple08 = new lib.apple();
+        this.apple08.parent = this;
+        this.apple08.setTransform(0.2, 0.2, 0.634, 0.634, 0, 0, 0, 28.6, 38);
+        this.timeline.addTween(cjs.Tween.get(this.apple08).wait(1));
+    }).prototype = getMCSymbolPrototype(lib.apple1, new cjs.Rectangle(-18.5, -24.4, 37, 49), null);
+    (lib.CCSSMATHKCCB5_1a_Canvas = function (mode, startPosition, loop) {
+        this.initialize(mode, startPosition, loop, {});
+        this.answerArea = new lib.answerArea();
+        this.answerArea.parent = this;
+        this.answerArea.setTransform(450, 140, 1, 1, 0, 0, 0, 0, 0);
+        this.timeline.addTween(cjs.Tween.get(this.answerArea).wait(1));
+        this.frame_0 = function () {
+            createjs.Graphics.prototype.dashedLineTo = function (x1, y1, x2, y2, dashLen) {
+                this.moveTo(x1, y1);
+                var dX = x2 - x1;
+                var dY = y2 - y1;
+                var dashes = Math.floor(Math.sqrt(dX * dX + dY * dY) / dashLen);
+                var dashX = dX / dashes;
+                var dashY = dY / dashes;
+                var q = 0;
+                while (q++ < dashes) {
+                    x1 += dashX;
+                    y1 += dashY;
+                    this[q % 2 == 0 ? 'moveTo' : 'lineTo'](x1, y1);
+                }
+                this[q % 2 == 0 ? 'moveTo' : 'lineTo'](x2, y2);
+                return this;
+            };
+            function addAnswer(stage) {
+                var destHeight = 80;
+                var destWidth = 155;
+                destinationX = 450;
+                destinationY = 40;
+                var box = new createjs.Shape();
+                box.graphics.setStrokeStyle(2).rect(0, 0, destWidth, destHeight);
+                var destination = new createjs.Container();
+                destination.x = destinationX;
+                destination.y = destinationY;
+                destination.addChild(box);
+                var label = new createjs.Text('2', '55px Sans-Serif', '#000');
+                label.textAlign = 'center';
+                label.y = destHeight / 4;
+                label.x = destWidth / 2;
+                var textRect = new createjs.Shape();
+                destination.addChild(label);
+                stage.addChild(destination);
+                var destLine = new cjs.Shape();
+                destLine.graphics.setStrokeStyle(5).beginStroke('#000000').dashedLineTo(destinationX, destinationY + destHeight * 1, destinationX + destWidth, destinationY + destHeight * 1, 5);
+                stage.addChild(destLine);
+            }
+            addAnswer(stage);
+            var _self = this;
+            _self._answerArea = this.answerArea;
+            _self._answerOptions = [
+                this.apple01,
+                this.apple02
+            ];
+            var answerAreaOccupancy = [];
+            _self._answerOptions.forEach(function (value, i) {
+                _self._answerOptions[i].originalX = _self._answerOptions[i].x;
+                _self._answerOptions[i].originalY = _self._answerOptions[i].y;
+                _self._answerOptions[i].addEventListener('pressmove', function (evt) {
+                    fl_DragToAnswerArea_instance(evt, _self._answerOptions[i]);
+                });
+                _self._answerOptions[i].addEventListener('pressup', function (evt) {
+                    fl_TestAnswerAreaIntersection_instance(evt, _self._answerOptions[i]);
+                });
+            });
+            function fl_DragToAnswerArea_instance(evt, instance) {
+                instance.x = evt.stageX / stage.scaleX;
+                instance.y = evt.stageY / stage.scaleY;
+                stage.update();
+                if (intersect(evt.currentTarget, _self._answerArea)) {
+                    evt.currentTarget.alpha = 0.2;
+                } else {
+                    evt.currentTarget.alpha = 1;
+                }
+            }
+            function fl_TestAnswerAreaIntersection_instance(evt, instance) {
+                if (intersect(evt.currentTarget, _self._answerArea)) {
+                    var index = answerAreaOccupancy.indexOf(instance.id);
+                    if (index > -1) {
+                        answerAreaOccupancy.splice(index, 1);
+                    }
+                    answerAreaOccupancy.push(instance.id);
+                    instance.x = evt.stageX / stage.scaleX;
+                    instance.y = evt.stageY / stage.scaleY;
+                } else {
+                    var index = answerAreaOccupancy.indexOf(instance.id);
+                    if (index > -1) {
+                        answerAreaOccupancy.splice(index, 1);
+                    }
+                    evt.currentTarget.x = instance.originalX;
+                    evt.currentTarget.y = instance.originalY;
+                }
+                $('#responseJSON').html('<div id=\'response\' data-response=\'' + answerAreaOccupancy.length + '\'></div><div id=\'genre\' data-genre=\'DragAndDropArea\'></div>');
+                evt.currentTarget.alpha = 1;
+            }
+            function intersect(obj1, obj2) {
+                if (!obj1) {
+                    return false;
+                }
+                if (!obj2) {
+                    return false;
+                }
+                var pt = {
+                    x: obj1.x,
+                    y: obj1.y
+                };
+                if (pt.x >= obj2.x && pt.x <= obj2.x + obj2.nominalBounds.width && (pt.y >= obj2.y && pt.y <= obj2.y + obj2.nominalBounds.height)) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+            this.stop();
+        };
+        this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(62));
+        this.apple01 = new lib.apple2();
+        this.apple01.parent = this;
+        this.apple01.setTransform(112.1, 112);
+        this.apple02 = new lib.apple1();
+        this.apple02.parent = this;
+        this.apple02.setTransform(299.5, 121);
+        this.timeline.addTween(cjs.Tween.get({}).to({
+            state: [
+                { t: this.apple02 },
+                { t: this.apple01 }
+            ]
+        }).wait(62));
+        this.instance = new lib.tree();
+        this.instance.parent = this;
+        this.instance.setTransform(189.9, 244.3, 1.17, 1.17);
+        this.timeline.addTween(cjs.Tween.get(this.instance).wait(62));
+    }).prototype = p = new cjs.MovieClip();
+    p.nominalBounds = new cjs.Rectangle(319, 239, 642, 482.2);
+    lib.properties = {
+        width: 640,
+        height: 480,
+        fps: 24,
+        color: '#FFFFFF',
+        opacity: 1,
+        manifest: [],
+        preloads: []
+    };
+}(lib = lib || {}, images = images || {}, createjs = createjs || {}, ss = ss || {}, AdobeAn = AdobeAn || {}));
+var lib, images, createjs, ss, AdobeAn;</script>
+    	<script>
+    		var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+    		function init() {
+    			canvas = document.getElementById("canvas");
+    			anim_container = document.getElementById("animation_container");
+    			dom_overlay_container = document.getElementById("dom_overlay_container");
+    			handleComplete();
+    		}
+    		function handleComplete() {
+    			//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+    			exportRoot = new lib.CCSSMATHKCCB5_1a_Canvas();
+    			stage = new createjs.Stage(canvas);
+    			stage.addChild(exportRoot);
+    			stage.enableMouseOver();	
+    			//Registers the "tick" event listener.
+    			fnStartAnimation = function() {
+    				createjs.Ticker.setFPS(lib.properties.fps);
+    				createjs.Ticker.addEventListener("tick", stage);
+    			}	    
+    			//Code to support hidpi screens and responsive scaling.
+    			function makeResponsive(isResp, respDim, isScale, scaleType) {		
+    				var lastW, lastH, lastS=1;		
+    				window.addEventListener('resize', resizeCanvas);		
+    				resizeCanvas();		
+    				function resizeCanvas() {			
+    					var w = lib.properties.width, h = lib.properties.height;			
+    					var iw = window.innerWidth, ih=window.innerHeight;			
+    					var pRatio = window.devicePixelRatio || 1, xRatio=iw/w, yRatio=ih/h, sRatio=1;			
+    					if(isResp) {                
+    						if((respDim=='width'&&lastW==iw) || (respDim=='height'&&lastH==ih)) {                    
+    							sRatio = lastS;                
+    						}				
+    						else if(!isScale) {					
+    							if(iw<w || ih<h)						
+    								sRatio = Math.min(xRatio, yRatio);				
+    						}				
+    						else if(scaleType==1) {					
+    							sRatio = Math.min(xRatio, yRatio);				
+    						}				
+    						else if(scaleType==2) {					
+    							sRatio = Math.max(xRatio, yRatio);				
+    						}			
+    					}			
+    					canvas.width = w*pRatio*sRatio;			
+    					canvas.height = h*pRatio*sRatio;
+    					canvas.style.width = dom_overlay_container.style.width = anim_container.style.width =  w*sRatio+'px';				
+    					canvas.style.height = anim_container.style.height = dom_overlay_container.style.height = h*sRatio+'px';
+    					stage.scaleX = pRatio*sRatio;			
+    					stage.scaleY = pRatio*sRatio;			
+    					lastW = iw; lastH = ih; lastS = sRatio;		
+    				}
+    			}
+    			makeResponsive(true,'both',false,2);	
+    			fnStartAnimation();
+    		}
+    	</script>
+    
+    	<div>
+    		<div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00);">
+    			<canvas id="canvas" style="position: absolute; display: block; background-color:rgba(255, 255, 255, 1.00);"></canvas>
+    			<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; position: absolute; left: 0px; top: 0px; display: block;">
+    			</div>
+    		</div>
+    		<script>init();</script>
+    		<div style="display:none;" id="responseJSON"></div>
+    	</div>
+    </div>

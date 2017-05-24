@@ -1,0 +1,10 @@
+{
+	"fileName" : "CC.K.M.CC.A.3_22a.js",
+	"outputFileName" : "dogOutput.html",
+	"outputFileNameTEST" : "dogOutputTEST.html",
+	"frameToAddFunctionalityOn" : "frame_49",
+	"answerOptions" : [ "3", "7", "1","9" ],
+	"fontSizeOfAnswers" : 96,
+	"answer" : "2",
+	"font": "Serif"
+}

@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="authoring-tool" content="Adobe_Animate_CC">
+<title>Alpha</title>
+<!-- write your code here -->
+<style>
+  #animation_container {
+	position:absolute;
+	margin:auto;
+	left:0;right:0;
+	top:0;bottom:0;
+  }
+
+  canvas {
+  	border: solid;
+  }
+</style>
+<script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+
+<script src="./cardinalSplines.js"></script>
+<script src="./easeljs-textarc.js"></script>
+
+<script>
+	var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+	function init() {
+
+		canvas = document.getElementById("canvas");
+		anim_container = document.getElementById("animation_container");
+		dom_overlay_container = document.getElementById("dom_overlay_container");
+		handleComplete();
+
+		drawPath();
+	}
+
+	function drawPath() {
+
+		var pathWidth = 30;
+		var points = [
+			50, 40, 
+			180, 50, 
+			220, 100, 
+			240, 200, 
+			270, 250, 
+			285, 305,			
+			305, 393,
+			425, 395,			
+			500, 375,
+			520, 300,
+			530, 250,			
+			540, 200,
+			550, 150, 
+			570, 100, 
+			590, 50
+		];
+
+		var pathLinePointsA = []; var pathLinePointsB = [];
+
+		for (var i = 0; i <= points.length-4; i+=2) {
+ 			var mx = (points[i] + points[i+2]) / 2; var my = (points[i+1] + points[i+3]) / 2;
+
+ 			var px = points[i+2] - points[i]; var py = points[i+3] - points[i+1];
+ 			var slope = -(px / py);
+ 			if (slope > 0) {
+ 				slope = Math.min(1.0, slope);
+ 			} else {
+ 				slope = Math.max(-1.0, slope);
+ 			}
+
+ 			var normalizedSlope = slope / (Math.sqrt(Math.pow(px,2), Math.pow(py,2)));
+			var b = my - (slope * mx);
+ 			var dx = mx - (mx - 1);
+ 			var dy = ((slope*(mx)+b)) - ((slope*(mx-1)+b));
+			var dxNorm = dx / (Math.sqrt(Math.pow(dx,2), Math.pow(dy,2)));
+ 			var dyNorm = dy / (Math.sqrt(Math.pow(dx,2), Math.pow(dy,2)));
+ 			
+ 			if (slope=="-Infinity" || slope=="Infinity") {
+ 				var lineC2 = new createjs.Shape();
+	 			lineC2.graphics.beginFill("green").drawCircle(mx, my + pathWidth,3);
+	 			stage.addChild(lineC2);
+
+	 			var lineC3 = new createjs.Shape();
+	 			lineC3.graphics.beginFill("blue").drawCircle(mx, my - pathWidth,3);
+	 			stage.addChild(lineC3);
+	 		} else {
+	 			if (slope < 0) {
+	 				pathLinePointsA.push(points[i] + dxNorm * pathWidth); pathLinePointsA.push(points[i+1] + dyNorm * pathWidth);
+					pathLinePointsB.push(points[i] - dxNorm * pathWidth); pathLinePointsB.push(points[i+1] - dyNorm * pathWidth);
+
+	 				pathLinePointsA.push(mx + dxNorm * pathWidth); pathLinePointsA.push(my + dyNorm * pathWidth);
+	 				pathLinePointsB.push(mx - dxNorm * pathWidth); pathLinePointsB.push(my - dyNorm * pathWidth);
+
+	 				// var lineC2 = new createjs.Shape();
+		 			// lineC2.graphics.beginFill("blue").drawCircle(mx - dxNorm * pathWidth, my - dyNorm * pathWidth,3);
+		 			// stage.addChild(lineC2);
+
+		 			// var lineC3 = new createjs.Shape();
+		 			// lineC3.graphics.beginFill("green").drawCircle(mx + dxNorm * pathWidth, my + dyNorm * pathWidth,3);
+		 			// stage.addChild(lineC3);
+
+		 			var line1 = new createjs.Shape();
+					line1.graphics.setStrokeStyle(2, "round").beginStroke("#000000").mt(mx - dxNorm * pathWidth, my - dyNorm * pathWidth).lt(mx + dxNorm * pathWidth, my + dyNorm * pathWidth);
+					stage.addChild(line1);
+				
+				} else if (slope > 0) {
+	 				pathLinePointsA.push(points[i] - dxNorm * pathWidth); pathLinePointsA.push(points[i+1] - dyNorm * pathWidth);
+					pathLinePointsB.push(points[i] + dxNorm * pathWidth); pathLinePointsB.push(points[i+1] + dyNorm * pathWidth);
+
+	 				pathLinePointsA.push(mx - dxNorm * pathWidth); pathLinePointsA.push(my - dyNorm * pathWidth);
+	 				pathLinePointsB.push(mx + dxNorm * pathWidth); pathLinePointsB.push(my + dyNorm * pathWidth);
+
+	 				// var lineC2 = new createjs.Shape();
+		 			// lineC2.graphics
+		 			// 	.beginFill("green")
+		 			// 	.drawCircle(mx - dxNorm * pathWidth, my - dyNorm * pathWidth,3);
+		 			// stage.addChild(lineC2);
+
+		 			// var lineC3 = new createjs.Shape();
+		 			// lineC3.graphics
+		 			// 	.beginFill("blue")
+		 			// 	.drawCircle(mx + dxNorm * pathWidth, my + dyNorm * pathWidth,3);
+		 			// stage.addChild(lineC3);
+
+		 			var line1 = new createjs.Shape();
+					line1.graphics.setStrokeStyle(2, "round").beginStroke("#000000").mt(mx - dxNorm * pathWidth, my - dyNorm * pathWidth).lt(mx + dxNorm * pathWidth, my + dyNorm * pathWidth);
+					stage.addChild(line1);
+				} else {
+
+	 				var lineC2 = new createjs.Shape();
+		 			lineC2.graphics
+		 				.beginFill("blue")
+		 				.drawCircle(mx + pathWidth, my,3);
+		 			stage.addChild(lineC2);
+
+		 			var lineC3 = new createjs.Shape();
+		 			lineC3.graphics
+		 				.beginFill("green")
+		 				.drawCircle(mx - pathWidth, my,3);
+		 			stage.addChild(lineC3);
+	 			}
+	 		}
+		}
+
+		var spline = getCurvePoints(pathLinePointsA);
+		for (var i = 0; i <= spline.length-2; i+=2) {
+			var line1 = new createjs.Shape();
+			line1.graphics
+				.setStrokeStyle(2, "round")
+				.beginStroke("#000000")
+				.mt(spline[i],spline[i+1])
+				.lt(spline[i+2],spline[i+3]);
+			stage.addChild(line1);
+		}
+
+		var spline = getCurvePoints(pathLinePointsB);
+		for (var i = 0; i <= spline.length-2; i+=2) {
+			var line1 = new createjs.Shape();
+			line1.graphics
+				.setStrokeStyle(2, "round")
+				.beginStroke("#000000")
+				.mt(spline[i],spline[i+1])
+				.lt(spline[i+2],spline[i+3]);
+			stage.addChild(line1);
+		}
+
+		//----------------------------------
+		var pathOccupancy = [];
+		for (var i = 0 ; i < points.length/2 ; i+=1) {
+			pathOccupancy[i] = {};
+			pathOccupancy[i].x = points[i*2];
+			pathOccupancy[i].y = points[i*2 + 1];
+			pathOccupancy[i].orb = null;
+		}
+		var character = new createjs.Shape();
+		character.graphics.beginFill("black")
+		 				.drawCircle(0,0,20);
+		character.x = points[0];
+		character.y = points[1];
+		stage.addChild(character);
+		//----------------------
+
+		character.on("pressmove", function(evt) {
+			evt.currentTarget.x = evt.stageX / stage.scaleX;
+		    evt.currentTarget.y = evt.stageY / stage.scaleY;
+
+		    var closestPathPoint = {};
+            closestPathPoint.distance = 1000000000;
+		    for (var i = 1; i < pathOccupancy.length - 1; i++) {
+		    	if (pathOccupancy[i].orb) {
+		    		stage.removeChild(pathOccupancy[i].orb);
+		    	}
+
+                var a = evt.currentTarget.x - pathOccupancy[i].x;
+                var b = evt.currentTarget.y - pathOccupancy[i].y;
+                var c = Math.sqrt(a * a + b * b);
+                if (c < closestPathPoint.distance) {
+                    closestPathPoint.x = pathOccupancy[i].x;
+                    closestPathPoint.y = pathOccupancy[i].y;
+                    closestPathPoint.distance = c;
+                    closestPathPoint.pointNum = i;
+                }
+            }
+            
+            pathOccupancy[closestPathPoint.pointNum].orb = new createjs.Shape(); 
+            pathOccupancy[closestPathPoint.pointNum].orb.graphics.beginFill("rgba(255,0,0,0.7)").drawCircle(closestPathPoint.x,closestPathPoint.y,3.0);
+ 			stage.addChild(pathOccupancy[closestPathPoint.pointNum].orb);
+
+		    stage.update(); 
+		});
+
+		character.on("pressup", function(evt) {
+			for (var i = 0; i < pathOccupancy.length - 1; i++) {  
+		    	if (pathOccupancy[i].orb) {
+		    		stage.removeChild(pathOccupancy[i].orb);
+		    	}
+		    }
+			var closestPathPoint = {};
+            closestPathPoint.distance = 1000000000;
+            for (var i = 0; i < pathOccupancy.length - 1; i++) {
+                var a = evt.currentTarget.x - pathOccupancy[i].x;
+                var b = evt.currentTarget.y - pathOccupancy[i].y;
+                var c = Math.sqrt(a * a + b * b);
+                if (c < closestPathPoint.distance) {
+                    closestPathPoint.x = pathOccupancy[i].x;
+                    closestPathPoint.y = pathOccupancy[i].y;
+                    closestPathPoint.distance = c;
+                    closestPathPoint.pointNum = i;
+                }
+            }
+            character.x = closestPathPoint.x;
+            character.y = closestPathPoint.y;
+
+            //--------------------------
+            if (wheelSelectionLabel && wheelSelectionLabel.text == "") {
+            	character.x = points[0];
+            	character.y = points[1];
+            } else {
+            	
+            	if (closestPathPoint.pointNum == wheelSelectionLabel.text) {
+            		$('#responseJSON').html('<div id=\'response\' data-response=\'Correct\'></div><div id=\'genre\' data-genre=\'Roulette\'></div>');
+            		character.removeAllEventListeners();
+            		spinButton.removeAllEventListeners();
+            	} else {
+            		$('#responseJSON').html('<div id=\'response\' data-response=\'Incorrect\'></div><div id=\'genre\' data-genre=\'Roulette\'></div>');
+            		character.removeAllEventListeners();
+            		spinButton.removeAllEventListeners();
+            	}
+
+            }
+
+		});
+		//----------------------------------
+
+		var wheelRadius = 90;
+		var wheelX = 100;
+		var wheelY = 300;
+		var circleOutline = new createjs.Shape();
+		circleOutline.graphics.beginStroke('black')
+		                .setStrokeStyle(4).arc(0,0, wheelRadius, 0, 2*Math.PI);
+
+		circleOutline.x = 100;
+		circleOutline.y = 300;
+		stage.addChild(circleOutline);
+
+		var wheel = new createjs.Container();
+		wheel.x = wheelX;
+		wheel.y = wheelY;
+		var wheelSelectionLabel = new createjs.Text('', "35px Sans-Serif", "#000");
+		wheelSelectionLabel.textAlign = 'center';
+		wheelSelectionLabel.x = 0;
+		wheelSelectionLabel.y = wheelRadius * 1.0;
+		wheel.addChild(wheelSelectionLabel);
+
+		var pie = new createjs.Shape();
+		var answerOptions = [1,2,3,4,5,6,7,8,9];
+
+		var slices = answerOptions.length;
+		var sliceWidth = 2*Math.PI/slices;		
+
+		for (var i = 0 ; i < slices ; i++) {
+			var r = Math.floor(Math.random()*225) + 30;
+			var g = Math.floor(Math.random()*225) + 30;
+			var b = Math.floor(Math.random()*225) + 30;
+			pie.graphics.beginFill("rgba(" + r + "," + g + "," + b + ",1)").arc(80,80,wheelRadius,sliceWidth*i,sliceWidth*(i+1),false).lineTo(80, 80);	
+		}
+
+	    pie.regX = 80;
+	    pie.regY = 80;
+	    pie.x = 0;
+	    pie.y = 0;
+
+	    wheel.addChild(pie);
+	    
+	    var textPlacementAngle = 360 / (answerOptions.length * 2); 
+	    var textPlacementRadius = 0.8 * wheelRadius;
+	    for ( var i = 0 ; i < answerOptions.length ; i++ ) {
+	    	var radian = textPlacementAngle * 0.0174532925 * (2*i + 1);
+			var x = textPlacementRadius * Math.cos(radian);
+			var y = textPlacementRadius * Math.sin(radian);    
+		    var label0 = new createjs.Text(answerOptions[i], "20px Helvetica", "#000");
+		    label0.textAlign = 'center';
+		    label0.outline = 4;
+		    label0.x = x;
+			label0.y = y - 10;
+			var label1 = new createjs.Text(answerOptions[i], "20px Helvetica", "#FFF");
+			label1.textAlign = 'center';
+		    label1.x = x;
+			label1.y = y - 10;
+
+			wheel.addChild(label0,label1);
+	    }
+
+	    var arrowRadius = 0.65 * wheelRadius;
+	    var arrowWidth = 0.08 * wheelRadius;
+		var arrow = new createjs.Shape();
+		arrow.graphics.setStrokeStyle(3, "round").beginStroke("#000")
+		.mt(0,0)
+		.lt(arrowRadius,0)
+		.mt(arrowRadius,0)
+		.lt(arrowRadius - arrowWidth,arrowWidth)
+		.mt(arrowRadius,0)
+		.lt(arrowRadius - arrowWidth,-arrowWidth);
+		arrow.x = wheelX;
+		arrow.y = wheelY;
+
+		var spinButton = new createjs.Container();
+		spinButton.x = wheelX;
+		spinButton.y = wheelY;
+		var g = new createjs.Shape();
+		g.graphics.beginFill("red").drawCircle(0,0,25);		
+		var spinLabel0 = new createjs.Text("Spin", "10px Serif", "#FFF");
+		    spinLabel0.textAlign = 'center';
+		    spinLabel0.outline = 3;
+		    spinLabel0.x = 0;
+			spinLabel0.y = -5;
+		var spinLabel1 = new createjs.Text("Spin", "10px Serif", "#000");
+		    spinLabel1.textAlign = 'center';
+		    spinLabel1.x = 0;
+			spinLabel1.y = -5;
+		
+		var spinButtonOutline = new createjs.Shape();
+		spinButtonOutline.graphics.beginStroke('black')
+		                .setStrokeStyle(1).arc(0,0, 25, 0, 2*Math.PI);
+
+		spinButtonOutline.x = wheelX;
+		spinButtonOutline.y = wheelY;
+		
+		spinButton.addChild(g,spinLabel0,spinLabel1);
+		
+		stage.addChild(wheel);
+		stage.addChild(arrow);
+		stage.addChild(spinButton);
+		stage.addChild(spinButtonOutline);
+
+		spinButton.on("pressup", function(evt) {			
+			var randomAngleDelta = Math.random() * 90;
+
+			createjs.Ticker.addEventListener("tick", spinTheWheel);
+			function spinTheWheel() { 
+				arrow.rotation += randomAngleDelta;
+				if (randomAngleDelta > 0) {		
+					randomAngleDelta -= 1;
+				} else {	
+					createjs.Ticker.removeEventListener("tick", spinTheWheel);
+					arrow.rotation = arrow.rotation % 360;
+					var wheelSelection = answerOptions[Math.floor(arrow.rotation/(sliceWidth*180/Math.PI))];
+					wheel.children[0].text = wheelSelection.toString();
+					stage.update();
+				}
+				stage.update();
+			}	
+		});
+	}
+
+	function handleComplete() {
+		var lib = {};
+		lib.properties = {
+			width: 640,
+			height: 480,
+			fps: 30,
+			color: "#FFFFFF",
+			opacity: 1.00,
+			manifest: [],
+			preloads: []
+		};
+
+		stage = new createjs.Stage(canvas);
+		
+		stage.enableMouseOver();	
+		//Registers the "tick" event listener.
+		fnStartAnimation = function() {
+			createjs.Ticker.setFPS(lib.properties.fps);
+			createjs.Ticker.addEventListener("tick", stage);
+		}	    
+		//Code to support hidpi screens and responsive scaling.
+		function makeResponsive(isResp, respDim, isScale, scaleType) {		
+			var lastW, lastH, lastS=1;		
+			window.addEventListener('resize', resizeCanvas);		
+			resizeCanvas();		
+			function resizeCanvas() {			
+				var w = lib.properties.width, h = lib.properties.height;			
+				var iw = window.innerWidth, ih=window.innerHeight;			
+				var pRatio = window.devicePixelRatio || 1, xRatio=iw/w, yRatio=ih/h, sRatio=1;			
+				if(isResp) {                
+					if((respDim=='width'&&lastW==iw) || (respDim=='height'&&lastH==ih)) {                    
+						sRatio = lastS;                
+					}				
+					else if(!isScale) {					
+						if(iw<w || ih<h)						
+							sRatio = Math.min(xRatio, yRatio);				
+					}				
+					else if(scaleType==1) {					
+						sRatio = Math.min(xRatio, yRatio);				
+					}				
+					else if(scaleType==2) {					
+						sRatio = Math.max(xRatio, yRatio);				
+					}			
+				}			
+				canvas.width = w*pRatio*sRatio;			
+				canvas.height = h*pRatio*sRatio;
+				canvas.style.width = dom_overlay_container.style.width = anim_container.style.width =  w*sRatio+'px';				
+				canvas.style.height = anim_container.style.height = dom_overlay_container.style.height = h*sRatio+'px';
+				stage.scaleX = pRatio*sRatio;			
+				stage.scaleY = pRatio*sRatio;			
+				lastW = iw; lastH = ih; lastS = sRatio;		
+			}
+		}
+		makeResponsive(true,'both',false,2);	
+		fnStartAnimation();
+	}
+</script>
+<!-- write your code here -->
+</head>
+<body style="margin:0px;">
+	<div id="animation_container" style="background-color:rgba(255, 255, 255, 1.00); width:640px; height:480px">
+		<canvas id="canvas" width="640" height="480" style="position: absolute; display: block; background-color:rgba(255, 255, 255, 1.00);"></canvas>
+		<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:640px; height:480px; position: absolute; left: 0px; top: 0px; display: block;">
+		</div>
+	</div>
+	<script>init();</script>
+	<div style="display:none;" id="responseJSON"></div>
+</body>
+</html>
